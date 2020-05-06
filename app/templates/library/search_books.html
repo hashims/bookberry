@@ -1,0 +1,175 @@
+{% extends "layout.html" %} 
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 text-center mt-5">
+    <h3>Search Book</h3>
+      <div class="input-group w-75 mx-auto">
+        <input
+          type="text"
+          class="form-control w-75"
+          placeholder="Enter book name"
+        />
+      </div>
+      <button type="submit" id="search-btn" class="btn btn-primary mt-3">Search</button>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead class="thead-primary">
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Publisher</th>
+                        <th scope="col">Year</th>
+                        <th scope="col">Pages</th>
+                        <th scope="col">Language</th>
+                        <th scope="col">Size</th>
+                        <th scope="col">Format</th>
+                        <th>Download</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>And Then There Were None </td>
+                        <td>Agatha Christie</td>
+                        <td>HarperCollins</td>
+                        <td>2009</td>
+                        <td>326</td>
+                        <td>English</td>
+                        <td>2 Mb</td>
+                        <td>pdf</td>
+                        <td><button type="submit" class="btn btn-info">Download</button> </td>
+                    </tr>
+                    <tr>
+                        <td>And Then There Were None </td>
+                        <td>Agatha Christie</td>
+                        <td>HarperCollins</td>
+                        <td>2009</td>
+                        <td>326</td>
+                        <td>English</td>
+                        <td>2 Mb</td>
+                        <td>pdf</td>
+                        <td><button type="submit" class="btn btn-info">Download</button> </td>
+                    </tr>
+                    <tr>
+                        <td>And Then There Were None </td>
+                        <td>Agatha Christie</td>
+                        <td>HarperCollins</td>
+                        <td>2009</td>
+                        <td>326</td>
+                        <td>English</td>
+                        <td>2 Mb</td>
+                        <td>pdf</td>
+                        <td><button type="submit" class="btn btn-info">Download</button> </td>
+                    </tr>
+                    <tr>
+                        <td>And Then There Were None </td>
+                        <td>Agatha Christie</td>
+                        <td>HarperCollins</td>
+                        <td>2009</td>
+                        <td>326</td>
+                        <td>English</td>
+                        <td>2 Mb</td>
+                        <td>pdf</td>
+                        <td><button type="submit" class="btn btn-info">Download</button> </td>
+                    </tr>
+                    <tr>
+                        <td>And Then There Were None </td>
+                        <td>Agatha Christie</td>
+                        <td>HarperCollins</td>
+                        <td>2009</td>
+                        <td>326</td>
+                        <td>English</td>
+                        <td>2 Mb</td>
+                        <td>pdf</td>
+                        <td><button type="submit" class="btn btn-info">Download</button> </td>
+                    </tr>
+                    <tr>
+                        <td>And Then There Were None </td>
+                        <td>Agatha Christie</td>
+                        <td>HarperCollins</td>
+                        <td>2009</td>
+                        <td>326</td>
+                        <td>English</td>
+                        <td>2 Mb</td>
+                        <td>pdf</td>
+                        <td><button type="submit" class="btn btn-info">Download</button> </td>
+                    </tr>
+                    <tr>
+                        <td>And Then There Were None </td>
+                        <td>Agatha Christie</td>
+                        <td>HarperCollins</td>
+                        <td>2009</td>
+                        <td>326</td>
+                        <td>English</td>
+                        <td>2 Mb</td>
+                        <td>pdf</td>
+                        <td><button type="submit" class="btn btn-info">Download</button> </td>
+                    </tr>
+                    <tr>
+                        <td>And Then There Were None </td>
+                        <td>Agatha Christie</td>
+                        <td>HarperCollins</td>
+                        <td>2009</td>
+                        <td>326</td>
+                        <td>English</td>
+                        <td>2 Mb</td>
+                        <td>pdf</td>
+                        <td><button type="submit" class="btn btn-info">Download</button> </td>
+                    </tr>
+                    <tr>
+                        <td>And Then There Were None </td>
+                        <td>Agatha Christie</td>
+                        <td>HarperCollins</td>
+                        <td>2009</td>
+                        <td>326</td>
+                        <td>English</td>
+                        <td>2 Mb</td>
+                        <td>pdf</td>
+                        <td><button type="submit" class="btn btn-info">Download</button> </td>
+                    </tr>
+                    <tr>
+                        <td>And Then There Were None </td>
+                        <td>Agatha Christie</td>
+                        <td>HarperCollins</td>
+                        <td>2009</td>
+                        <td>326</td>
+                        <td>English</td>
+                        <td>2 Mb</td>
+                        <td>pdf</td>
+                        <td><button type="submit" class="btn btn-info">Download</button> </td>
+                    </tr>
+                    <tr>
+                        <td>And Then There Were None </td>
+                        <td>Agatha Christie</td>
+                        <td>HarperCollins</td>
+                        <td>2009</td>
+                        <td>326</td>
+                        <td>English</td>
+                        <td>2 Mb</td>
+                        <td>pdf</td>
+                        <td><button type="submit" class="btn btn-info">Download</button> </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    const searchButton = document.getElementById('search-btn')
+
+    searchButton.addEventListener('click', function(e) {
+        fetch('http://localhost:5000/demo')
+        .then(res => res.json())
+        .then(r => alert(r.a))
+        .catch(err => console.log(err))
+    })
+</script>
+{% endblock %}
+

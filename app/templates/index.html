@@ -1,0 +1,78 @@
+{% extends "layout.html" %} {% block content %}
+<div>
+  <section class="masthead" role="img" aria-label="Image Description">
+    <h1>
+      No Two Persons Ever Read The Same Book
+    </h1>
+    <div id="search-div">
+      <form action="/search-books">
+        <input type="text" id="search-input" name="query" placeholder="Search for Title, Author...">
+        <input type="submit" id="search" value="&#9906;">
+      </form>
+    </div>
+  </section>
+
+  {% with errors = get_flashed_messages(category_filter=["error"]) %}
+    {% if errors %}
+    <div class="alert-message block-message error">
+      <!-- <a class="close" href="#">×</a> -->
+      {% for error in errors %}
+        <script>
+          const a = {{ error|tojson }};
+          alert(a)
+        </script>
+      {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  {% endwith %}
+  
+  {% if books %}
+    <section style="margin: 40px 0">
+      {% for book in books %}
+      <div class="books-container">
+        <div class="book-container">
+          <div class="img-section">
+            <img src="https://libgen.lc{{ book.cover_url }}"  alt="">
+          </div>
+          <div class="detail-section">
+            <h3 class="m-0"> <u>{{ book.title }}</u> </h3>
+            <p style="margin-top: 5px; color: gray">{{ book.publisher }} </p>
+            <p style="color: #49AFD0">{{ book.author }}</p>
+            <div class="book-details">
+              <div class="get-book-div">
+                <form action="/get-book" method="POST">
+                  <input type="hidden" value="{{ book.download_url }}" name="url">
+                  <input type="submit" class="btn" value="Get Book">
+                </form>
+              </div>
+              <div class="book-property-div">
+                <div class="book-property ">
+                  Year: <span class="uppercase">{{ book.year }}</span>
+                </div>
+                <div class="book-property">
+                  Size: <span class="uppercase">{{ book.size }}</span>
+                </div>
+                <div class="book-property">
+                  File: <span class="uppercase">{{ book.book_type }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </section>
+  {% endif %}
+  <script>
+    window.onload = function(e) {
+      const urlParams = new URLSearchParams(window.location.search);
+      const query = urlParams.get('query');
+
+      if (query) {
+        document.getElementById('search-input').value = query
+      }
+    }
+  </script>
+</div>
+{% endblock %}
