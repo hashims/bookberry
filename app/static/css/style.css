@@ -2,6 +2,10 @@ body {
   font-family: 'Playfair Display', serif;
 }
 
+input {
+  outline: none;
+}
+
 .masthead {
   display: flex;
   justify-content: center;
